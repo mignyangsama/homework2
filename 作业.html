@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="作业.css">
+</head>
+<body>
+<div id="app">
+    <div id="nav">
+        <div  id="nav1" :style="color1">
+            <img @click="clicked1" id="img1" src="img/grade.png" alt="">
+        </div>
+        <div  id="nav2" :style="color2">
+            <img @click="clicked2" id="img2" src="img/list.png" alt="">
+        </div>
+    </div>
+    <div v-show="cl" id="content">
+        <div class="div1" v-for="sama in array">
+            <a :href="sama.url">
+                <img class="img3" :src="sama.image" alt="">
+            </a>
+        </div>
+    </div>
+    <div v-show="lc" id="c_1">
+        <div class="div2" v-for="sama in array">
+            <a :href="sama.url">
+                <img :src="sama.image" alt="">
+            </a>
+            <a :href="sama.url"><p>{{sama.title}}</p></a>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            cl:true,
+            lc:false,
+            color1:{
+                backgroundColor:"#cb2b89"
+            },
+            color2:{
+                backgroundColor:""
+            },
+            array:[{
+                title: "What You Need To Know About CSS Variables",
+                url: "http://tutorialzine.com/2016/03/what-you-need-to-know-about-css-variables/",
+                image: 'https://tutorialzine.com/media/2016/03/css-variables.jpg'
+            },
+                {
+                    title: "Freebie: 4 Great Looking Pricing Tables",
+                    url: "http://tutorialzine.com/2016/02/freebie-4-great-looking-pricing-tables/",
+                    image: 'https://tutorialzine.com/media/2016/02/great-looking-pricing-tables.jpg'
+                },
+                {
+                    title: "20 Interesting JavaScript and CSS Libraries for February 2016",
+                    url: "http://tutorialzine.com/2016/02/20-interesting-javascript-and-css-libraries-for-february-2016/",
+                    image: 'https://tutorialzine.com/media/2016/02/interesting-resources-february.jpg'
+                },
+                {
+                    title: "Quick Tip: The Easiest Way To Make Responsive Headers",
+                    url: "http://tutorialzine.com/2016/02/quick-tip-easiest-way-to-make-responsive-headers/",
+                    image: 'https://tutorialzine.com/media/2016/02/quick-tip-responsive-headers.png'
+                },
+                {
+                    title: "Learn SQL In 20 Minutes",
+                    url: "http://tutorialzine.com/2016/01/learn-sql-in-20-minutes/",
+                    image: 'https://tutorialzine.com/media/2016/01/learn-sql-20-minutes.png'
+                },
+                {
+                    title: "Creating Your First Desktop App With HTML, JS and Electron",
+                    url: "http://tutorialzine.com/2015/12/creating-your-first-desktop-app-with-html-js-and-electron/",
+                    image: 'https://tutorialzine.com/media/2015/12/creating-your-first-desktop-app-with-electron.png'
+                }]
+        },
+        methods:{
+            clicked1:function () {
+                this.cl = true,
+                this.lc = false
+                this.$data.color2.backgroundColor =''
+                this.$data.color1.backgroundColor ='#cb2b89'
+            },
+            clicked2:function () {
+                this.cl = false;
+                this.lc = true;
+                this.$data.color2.backgroundColor ='#cb2b89'
+                this.$data.color1.backgroundColor =''
+            }
+        }
+    })
+</script>
+</html>

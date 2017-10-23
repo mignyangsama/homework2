@@ -1,0 +1,68 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+#nav{
+    width: 420px;
+    height:50px;
+    background-color: dodgerblue;
+    position: relative;
+    right: 0;
+    top: 0;
+}
+/*#img1{*/
+    /*position: absolute;*/
+    /*right: 40px;*/
+    /*top: 0;*/
+/*}*/
+/*#img2{*/
+    /*position: absolute;*/
+    /*right: 0;*/
+    /*top: 0;*/
+/*}*/
+#nav img{
+    padding: 10px;
+    width: 30px;
+}
+.div1 .img3{
+    width: 100%;
+    height: 100%;
+}
+.div1{
+    margin: 0;
+    display: inline-block;
+    width: 207px;
+    height: 180px;
+}
+.div2{
+    overflow: hidden;
+}
+.div2 p{
+    float: right;
+     width: 230px;
+     height: 50px;
+    font-size: 14px;
+ }
+.div2 a{
+    text-decoration: none;
+    color: black;
+}
+.div2 img{
+    width: 180px;
+}
+#nav1{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    position: absolute;
+    right: 40px;
+    top: 0;
+}
+#nav2{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
